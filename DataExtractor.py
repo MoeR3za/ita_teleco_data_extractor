@@ -7,9 +7,9 @@ COL_NAMES = ['sqr_id', 'interval', 'country_code', 'rec_sms', 'sent_sms', 'inc_c
 
 def save_extract(extract: pd.DataFrame, sqr_id:int):
     if len(extract.columns) == 1:
-        extract_name = f'{extract.columns[0]}_extract_sqr_id_{sqr_id}'
+        extract_name = f'{extract.columns[0]}_sqr_{sqr_id}'
     else:
-        extract_name = f'multi_extract_sqr_id_{sqr_id}'
+        extract_name = f'multi_sqr_{sqr_id}'
 
     while True:
         if os.path.isfile(extract_name+'.csv'):
@@ -19,7 +19,9 @@ def save_extract(extract: pd.DataFrame, sqr_id:int):
     extract_name = extract_name+'.csv'
 
     print(f'Saving file as: {extract_name}')
-    extract.to_csv(extract_name)
+    if not os.path.isdir('output'):
+        os.makedirs('output')
+    extract.to_csv(os.path.join('output', extract_name))
 
 def extract_traffic(sqr_id, columns):
     columns = set([c for c in COL_NAMES]) if columns == 'all' else set([c for c in columns])
