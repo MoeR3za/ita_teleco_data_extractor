@@ -1,6 +1,6 @@
 # Telecom Italia 2015 Telecommunications Activity data extractor
 
-A python script used to extract desired data from TelecomItalia Telecommunications Activity dataset
+A python script used to extract desired data from a specific square from TelecomItalia Telecommunications Activity dataset.
 
 
 #### clone
