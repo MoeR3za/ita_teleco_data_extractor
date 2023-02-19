@@ -9,7 +9,7 @@ git clone https://github.com/MoeR3za/ita_teleco_data_extractor.git
 ```
 #### install
 ```
-pip install -r requirements
+pip install -r requirements.exe
 ```
 make sure script file is in the same directory as the dataset files downloaded from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EGZHFV
 #### Usage
